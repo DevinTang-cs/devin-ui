@@ -1,11 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import { ref, onMounted } from 'vue';
+  import DeButton from './components/Button/DeButton.vue';
+  import type { ButtonInstance } from './components/Button/types';
+  const buttonRef = ref<ButtonInstance | null>(null);
+  onMounted(() => {
+    console.log(buttonRef.value?.ref);
+  })
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <DeButton type='primary' plain ref="buttonRef">Button</DeButton>
 </template>
 
 <style scoped></style>
