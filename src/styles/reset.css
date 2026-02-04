@@ -29,7 +29,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--vk-text-color-regular);
+  color: var(--de-text-color-regular);
   font-weight: inherit;
 
   &:first-child {
@@ -42,15 +42,15 @@ h6 {
 }
 
 h1 {
-  font-size: calc(var(--vk-font-size-base) + 6px);
+  font-size: calc(var(--de-font-size-base) + 6px);
 }
 
 h2 {
-  font-size: calc(var(--vk-font-size-base) + 4px);
+  font-size: calc(var(--de-font-size-base) + 4px);
 }
 
 h3 {
-  font-size: calc(var(--vk-font-size-base) + 2px);
+  font-size: calc(var(--de-font-size-base) + 2px);
 }
 
 h4,
@@ -74,16 +74,16 @@ p {
 
 sup,
 sub {
-  font-size: calc(var(--vk-font-size-base) - 1px);
+  font-size: calc(var(--de-font-size-base) - 1px);
 }
 
 small {
-  font-size: calc(var(--vk-font-size-base) - 2px);
+  font-size: calc(var(--de-font-size-base) - 2px);
 }
 
 hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid var(--vk-border-color-lighter);
+  border-top: 1px solid var(--de-border-color-lighter);
 }
