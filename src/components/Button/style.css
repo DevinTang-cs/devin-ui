@@ -1,0 +1,125 @@
+.de-button {
+  --de-button-font-weight: var(--de-font-weight-primary);
+  --de-button-border-color: var(--de-border-color);
+  --de-button-bg-color: var(--de-fill-color-blank);
+  --de-button-text-color: var(--de-text-color-regular);
+  --de-button-disabled-text-color: var(--de-disabled-text-color);
+  --de-button-disabled-bg-color: var(--de-fill-color-blank);
+  --de-button-disabled-border-color: var(--de-border-color-light);
+  --de-button-hover-text-color: var(--de-color-primary);
+  --de-button-hover-bg-color: var(--de-color-primary-light-9);
+  --de-button-hover-border-color: var(--de-color-primary-light-7);
+  --de-button-active-text-color: var(--de-button-hover-text-color);
+  --de-button-active-border-color: var(--de-color-primary);
+  --de-button-active-bg-color: var(--de-button-hover-bg-color);
+  --de-button-outline-color: var(--de-color-primary-light-5);
+  --de-button-active-color: var(--de-text-color-primary);
+}
+.de-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--de-button-text-color);
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: .1s;
+  font-weight: var(--de-button-font-weight);
+  user-select: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  background-color: var(--de-button-bg-color);
+  border: var(--de-border);
+  border-color: var(--de-button-border-color);
+  padding: 8px 15px;
+  font-size: var(--de-font-size-base);
+  border-radius: var(--de-border-radius-base);
+  & + & {
+    margin-left: 12px;
+  }
+  &:hover,
+  &:focus {
+    color: var(--de-button-hover-text-color);
+    border-color: var(--de-button-hover-border-color);
+    background-color: var(--de-button-hover-bg-color);
+    outline: none;
+  }
+  &:active {
+    color: var(--de-button-active-text-color);
+    border-color: var(--de-button-active-border-color);
+    background-color: var(--de-button-active-bg-color);
+    outline: none;
+  }
+  &.is-plain {
+    --de-button-hover-text-color: var(--de-color-primary);
+    --de-button-hover-bg-color: var(--de-fill-color-blank);
+    --de-button-hover-border-color: var(--de-color-primary);
+  }
+  /*round*/
+  &.is-round {
+    border-radius: var(--de-border-radius-round);
+  }
+  /*circle*/
+  &.is-circle {
+    border-radius: 50%;
+    padding: 8px;
+  }
+  /*disabled*/
+  &.is-disabled, &.is-disabled:hover, &.is-disabled:focus,
+  &[disabled], &[disabled]:hover, &[disabled]:focus
+  {
+    color: var(--de-button-disabled-text-color);
+    cursor: not-allowed;
+    background-image: none;
+    background-color: var(--de-button-disabled-bg-color);
+    border-color: var(--de-button-disabled-border-color);
+  }
+  [class*=de-icon] + span {
+    margin-left: 6px;
+  }
+}
+@each $val in primary,success,warning,info,danger {
+  .de-button--$(val) {
+    --de-button-text-color: var(--de-color-white);
+    --de-button-bg-color: var(--de-color-$(val));
+    --de-button-border-color: var(--de-color-$(val));
+    --de-button-outline-color: var(--de-color-$(val)-light-5);
+    --de-button-active-color: var(--de-color-$(val)-dark-2);
+    --de-button-hover-text-color: var(--de-color-white);
+    --de-button-hover-bg-color: var(--de-color-$(val)-light-3);
+    --de-button-hover-border-color: var(--de-color-$(val)-light-3);
+    --de-button-active-bg-color: var(--de-color-$(val)-dark-2);
+    --de-button-active-border-color: var(--de-color-$(val)-dark-2);
+    --de-button-disabled-text-color: var(--de-color-white);
+    --de-button-disabled-bg-color: var(--de-color-$(val)-light-5);
+    --de-button-disabled-border-color: var(--de-color-$(val)-light-5);
+  }
+  .de-button--$(val).is-plain {
+    --de-button-text-color: var(--de-color-$(val));
+    --de-button-bg-color: var(--de-color-$(val)-light-9);
+    --de-button-border-color: var(--de-color-$(val)-light-5);
+    --de-button-hover-text-color: var(--de-color-white);
+    --de-button-hover-bg-color: var(--de-color-$(val));
+    --de-button-hover-border-color: var(--de-color-$(val));
+    --de-button-active-text-color: var(--de-color-white);
+  }
+}
+.de-button--large {
+  --de-button-size: 40px;
+  height: var(--de-button-size);
+  padding: 12px 19px;
+  font-size: var(--de-font-size-base);
+  border-radius: var(--de-border-radius-base);
+}
+.de-button--small {
+  --de-button-size: 24px;
+  height: var(--de-button-size);
+  padding: 5px 11px;
+  font-size: 12px;
+  border-radius: calc(var(--de-border-radius-base) - 1px);
+}
+

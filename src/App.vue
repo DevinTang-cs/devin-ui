@@ -12,7 +12,12 @@
 </script>
 
 <template>
-  <DeButton type='primary' plain ref="buttonRef">Button</DeButton>
+  <DeButton type='warning' ref="buttonRef">Button</DeButton>
+  <DeButton plain type="success">Button</DeButton>
+  <DeButton circle type="info">circle Button</DeButton>
+  <DeButton disabled>Button</DeButton>
+  <DeButton round>round Button</DeButton>
+
   <DeCollapse v-model="openedValue" @change="(e) => console.log(e)" accordion>
     <DeCollapseItem name="a" title="Title A">
       <h1>headline title</h1>
@@ -28,4 +33,6 @@
   </DeCollapse>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>

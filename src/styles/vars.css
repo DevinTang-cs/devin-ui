@@ -2,6 +2,23 @@
   /* colors */
   --de-color-white: #fff;
   --de-color-black: #000;
+  --colors: (
+    primary: #409eff,
+    success: #67c23a,
+    warning: #e6a23c,
+    danger: #f56c6c,
+    info: #909399
+  );
+
+  /* @each $val, $color in var(--colors) {
+    --de-color-$(val): $(color);
+    @for $i from 3 to 9 by 2 {
+      --de-color-$(val)-light-$(i): mix(#fff, $(color), .$(i));
+    }
+    --de-color-$(val)-light-8: mix(#fff, $(color), .8);
+    --de-color-$(val)-dark-2: mix(#000, $(color), .2);
+  } */
+
   --de-color-primary: #409eff;
   --de-color-primary-light-3: rgb(121, 187, 255);
   --de-color-primary-light-5: rgb(160, 207, 255);
@@ -44,6 +61,7 @@
   --de-color-info-light-8: rgb(233, 233, 235);
   --de-color-info-light-9: rgb(244, 244, 245);
   --de-color-info-dark-2: rgb(115, 118, 122);
+
   --de-bg-color: #ffffff;
   --de-bg-color-page: #f2f3f5;
   --de-bg-color-overlay: #ffffff;
