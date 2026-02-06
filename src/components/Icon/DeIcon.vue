@@ -1,18 +1,30 @@
 <template>
-  <i class="de-icon">
-    <font-awesome-icon icon! v-bind="$props" />
+  <i
+    class="de-icon"
+    :class="{
+      [`de-icon--${type}`]: type
+    }"
+    :style="customStyles"
+  >
+    <font-awesome-icon icon! v-bind="filterdProps" />
   </i>
 </template>
 
 <script setup lang="ts">
-import type { FontAwesomeIconProps } from "@fortawesome/vue-fontawesome";
+import { omit } from "lodash-es";
+import type { FontAwesomeIconProps } from "./type";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { computed } from "vue";
 
 defineOptions({
   name: 'DeIcon',
   inheritAttrs: false,
 })
-defineProps<FontAwesomeIconProps>()
+const props = defineProps<FontAwesomeIconProps>()
+const filterdProps = computed(() =>  omit(props, ['type', 'color']))
+const customStyles = computed(() => {
+  return props.color ? { color: props.color } : {}
+})
 
 </script>
 

@@ -77,7 +77,10 @@ onMounted(() => {
 
   <DeIcon icon="fa-solid fa-user-secret" />
   <DeIcon icon="arrow-up" size="2xl" spin />
-  <DeIcon icon="fa-solid fa-user-secret" />
+  <DeIcon icon="arrow-up" size="2xl" type="danger" />
+  <DeIcon icon="arrow-left" size="2xl" type="warning" />
+  <DeIcon icon="arrow-right" size="2xl" type="info" />
+  <DeIcon icon="arrow-right" size="2xl" type="info" color="orange" />
 </template>
 
 <style scoped>
