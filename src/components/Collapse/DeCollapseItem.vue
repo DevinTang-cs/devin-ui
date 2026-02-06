@@ -15,6 +15,7 @@
       @click="handleClick"
     >
       <slot name="title">{{ title }}</slot>
+      <DeIcon icon="angle-right" class="header-angle" />
     </div>
     <Transition name="slide" v-on="transitionEvents" >
       <div class="de-collapse-item__wrapper"  v-show="isActive">
@@ -28,6 +29,7 @@
 
 <script setup lang="ts">
 import { collapseContextKey, type CollapseItemProps } from './types';
+import DeIcon from '../Icon/DeIcon.vue';
 import { computed, inject } from 'vue';
 defineOptions({
   name: 'DeCollapseItem'

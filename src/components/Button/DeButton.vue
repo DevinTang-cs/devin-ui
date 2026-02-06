@@ -8,12 +8,16 @@
       'is-plain': plain,
       'is-round': round,
       'is-circle': circle,
-      'is-disabled': disabled
+      'is-disabled': disabled,
+      'is-loading': loading
     }"
-    :disabled="disabled"
+    :disabled="disabled || loading"
     :autofocus="autofocus"
     :type="nativeType"
+
   >
+    <de-icon icon="spinner" spin v-if="loading" />
+    <de-icon v-if="icon" :icon="icon" />
     <span><slot /></span>
   </button>
 </template>
@@ -21,6 +25,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import type { ButtonProps } from './types';
+import DeIcon from '../Icon/DeIcon.vue';
 withDefaults(defineProps<ButtonProps>(), {
   nativeType: 'button'
 })

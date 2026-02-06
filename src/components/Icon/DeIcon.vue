@@ -5,6 +5,7 @@
       [`de-icon--${type}`]: type
     }"
     :style="customStyles"
+    v-bind="$attrs"
   >
     <font-awesome-icon icon! v-bind="filterdProps" />
   </i>

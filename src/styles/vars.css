@@ -108,4 +108,8 @@
   --de-disabled-bg-color: var(--de-fill-color-light);
   --de-disabled-text-color: var(--de-text-color-placeholder);
   --de-disabled-border-color: var(--de-border-color-light);
+
+  /* transition */
+  --de-transition-duration: 0.3s;
+  --de-transition-duration-fast: 0.2s;
 }

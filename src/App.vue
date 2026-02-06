@@ -61,6 +61,14 @@ onMounted(() => {
     </div>
   </section>
 
+  <section>
+    <div class="row">
+      <DeButton loading>Loading Default</DeButton>
+      <DeButton type="primary" icon="arrow-up">Primary</DeButton>
+      <DeButton type="success" plain disabled>Disabled Plain Success</DeButton>
+    </div>
+  </section>
+
   <DeCollapse v-model="openedValue" @change="(e) => console.log(e)" accordion>
     <DeCollapseItem name="a" title="Title A">
       <h1>headline title</h1>
