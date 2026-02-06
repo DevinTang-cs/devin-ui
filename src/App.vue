@@ -1,20 +1,21 @@
 <script setup lang="ts">
-  import { ref, onMounted } from 'vue';
-  import DeButton from './components/Button/DeButton.vue';
-  import type { ButtonInstance } from './components/Button/types';
-  import DeCollapse from './components/Collapse/DeCollapse.vue';
-  import DeCollapseItem from './components/Collapse/DeCollapseItem.vue';
-  const buttonRef = ref<ButtonInstance | null>(null);
-  const openedValue = ref(['a'])
-  onMounted(() => {
-    console.log(buttonRef.value?.ref);
-  })
+import { ref, onMounted } from 'vue';
+import DeButton from './components/Button/DeButton.vue';
+import type { ButtonInstance } from './components/Button/types';
+import DeCollapse from './components/Collapse/DeCollapse.vue';
+import DeCollapseItem from './components/Collapse/DeCollapseItem.vue';
+import DeIcon from './components/Icon/DeIcon.vue';
+const buttonRef = ref<ButtonInstance | null>(null);
+const openedValue = ref(['a'])
+onMounted(() => {
+  console.log(buttonRef.value?.ref);
+})
 </script>
 
 <template>
   <section>
     <div class="row">
-      <DeButton>Default</DeButton>
+      <DeButton ref="buttonRef">Default</DeButton>
       <DeButton type="primary">Primary</DeButton>
       <DeButton type="success">Success</DeButton>
       <DeButton type="warning">Warning</DeButton>
@@ -73,6 +74,10 @@
     </DeCollapseItem>
     <!-- {{ openedValue }} -->
   </DeCollapse>
+
+  <DeIcon icon="fa-solid fa-user-secret" />
+  <DeIcon icon="arrow-up" size="2xl" spin />
+  <DeIcon icon="fa-solid fa-user-secret" />
 </template>
 
 <style scoped>
